@@ -32,130 +32,122 @@
 <body>
     <h1>Exercícios Resolvidos</h1>
 
-    <!-- Exercício 1 - Matemática: Operações com Números Inteiros -->
+    <!-- Exercício 1 - Sequência de Fibonacci -->
     <div class="exercicio">
-        <h2>Exercício 1: Operações com Números Inteiros</h2>
-        <p>Resolva a seguinte expressão: \( (-8 + 4) \times 3 - 10 \).</p>
-        <p><button onclick="resolverExercicio1()">Ver Solução</button></p>
+        <h2>Exercício 1: Sequência de Fibonacci</h2>
+        <p>Informe um número para verificar se ele pertence à sequência de Fibonacci:</p>
+        <input type="number" id="numeroFibonacci" placeholder="Digite um número" />
+        <p><button onclick="verificarFibonacci()">Verificar</button></p>
         <p id="resposta1" class="resposta"></p>
     </div>
 
-    <!-- Exercício 2 - Matemática: Razão e Proporção -->
+    <!-- Exercício 2 - Verificar a letra 'a' -->
     <div class="exercicio">
-        <h2>Exercício 2: Razão e Proporção</h2>
-        <p>Se a razão entre dois números é 3:5 e a soma deles é 40, quais são os números?</p>
-        <p><button onclick="resolverExercicio2()">Ver Solução</button></p>
+        <h2>Exercício 2: Verificar a Letra 'A'</h2>
+        <p>Informe uma string para verificar a existência e a quantidade de letras 'A' (maiúscula ou minúscula):</p>
+        <input type="text" id="stringEntrada" placeholder="Digite uma string" />
+        <p><button onclick="verificarLetraA()">Verificar</button></p>
         <p id="resposta2" class="resposta"></p>
     </div>
 
-    <!-- Exercício 3 - Matemática: Conjuntos -->
+    <!-- Exercício 3 - Somatório de K -->
     <div class="exercicio">
-        <h2>Exercício 3: Conjuntos</h2>
-        <p>Dados os conjuntos \( A = \{1, 2, 3, 4\} \) e \( B = \{3, 4, 5, 6\} \), determine \( A \cap B \) e \( A \cup B \).</p>
-        <p><button onclick="resolverExercicio3()">Ver Solução</button></p>
+        <h2>Exercício 3: Somatório de K</h2>
+        <p>O valor da variável SOMA ao final do processamento:</p>
+        <p><button onclick="calcularSomatorio()">Ver Solução</button></p>
         <p id="resposta3" class="resposta"></p>
     </div>
 
-    <!-- Exercício 4 - Matemática: Operações com Números Racionais -->
+    <!-- Exercício 4 - Lógica de sequência -->
     <div class="exercicio">
-        <h2>Exercício 4: Operações com Números Racionais</h2>
-        <p>Calcule: \( \frac{3}{4} + \frac{5}{6} - \frac{2}{3} \).</p>
-        <p><button onclick="resolverExercicio4()">Ver Solução</button></p>
+        <h2>Exercício 4: Complete as Sequências</h2>
+        <p>a) 1, 3, 5, 7, ___</p>
+        <p>b) 2, 4, 8, 16, 32, 64, ___</p>
+        <p>c) 0, 1, 4, 9, 16, 25, 36, ___</p>
+        <p>d) 4, 16, 36, 64, ___</p>
+        <p>e) 1, 1, 2, 3, 5, 8, ___</p>
+        <p>f) 2, 10, 12, 16, 17, 18, 19, ___</p>
+        <p><button onclick="completarSequencias()">Ver Solução</button></p>
         <p id="resposta4" class="resposta"></p>
     </div>
 
-    <!-- Exercício 5 - História: Brasil Colônia -->
+    <!-- Exercício 5 - Interruptores e Lâmpadas -->
     <div class="exercicio">
-        <h2>Exercício 5: História - Brasil Colônia</h2>
-        <p>Qual foi o principal motivo para a vinda da família real portuguesa ao Brasil em 1808?</p>
-        <p><button onclick="resolverExercicio5()">Ver Solução</button></p>
+        <h2>Exercício 5: Interruptores e Lâmpadas</h2>
+        <p>Como descobrir qual interruptor controla cada lâmpada em duas idas até a sala?</p>
+        <p><button onclick="solucaoInterruptores()">Ver Solução</button></p>
         <p id="resposta5" class="resposta"></p>
     </div>
 
-    <!-- Exercício 6 - História: Povos Indígenas no Brasil -->
-    <div class="exercicio">
-        <h2>Exercício 6: História - Povos Indígenas no Brasil</h2>
-        <p>Como os povos indígenas do Brasil viviam antes da chegada dos portugueses?</p>
-        <p><button onclick="resolverExercicio6()">Ver Solução</button></p>
-        <p id="resposta6" class="resposta"></p>
-    </div>
-
     <script>
-        // Função para resolver o exercício 1 - Números Inteiros
-        function resolverExercicio1() {
-            const resultado = (-8 + 4) * 3 - 10;
-            document.getElementById("resposta1").textContent = "A resposta é: " + resultado;
-        }
-
-        // Função para resolver o exercício 2 - Razão e Proporção
-        function resolverExercicio2() {
-            const soma = 40;
-            const razaoParte1 = 3;
-            const razaoParte2 = 5;
-            const totalPartes = razaoParte1 + razaoParte2;
-
-            const valorPorParte = soma / totalPartes;
-            const numero1 = valorPorParte * razaoParte1;
-            const numero2 = valorPorParte * razaoParte2;
-
-            document.getElementById("resposta2").textContent = "Os números são: " + numero1 + " e " + numero2;
-        }
-
-        // Função para resolver o exercício 3 - Conjuntos
-        function resolverExercicio3() {
-            const conjuntoA = [1, 2, 3, 4];
-            const conjuntoB = [3, 4, 5, 6];
-
-            // Interseção (A ∩ B)
-            const intersecao = conjuntoA.filter(x => conjuntoB.includes(x));
-
-            // União (A ∪ B)
-            const uniao = [...new Set([...conjuntoA, ...conjuntoB])];
-
-            document.getElementById("resposta3").textContent = "Interseção (A ∩ B): " + intersecao + "; União (A ∪ B): " + uniao;
-        }
-
-        // Função para resolver o exercício 4 - Números Racionais
-        function resolverExercicio4() {
-            // Função para calcular o MMC (Mínimo Múltiplo Comum)
-            function mmc(a, b) {
-                const maior = Math.max(a, b);
-                let i = maior;
-                while (i % a !== 0 || i % b !== 0) {
-                    i += maior;
-                }
-                return i;
+        // Função para verificar Fibonacci
+        function verificarFibonacci() {
+            const numero = parseInt(document.getElementById("numeroFibonacci").value);
+            let a = 0, b = 1, c;
+            if (numero === 0 || numero === 1) {
+                document.getElementById("resposta1").textContent = "O número " + numero + " pertence à sequência de Fibonacci.";
+                return;
             }
-
-            const fracao1 = [3, 4]; // 3/4
-            const fracao2 = [5, 6]; // 5/6
-            const fracao3 = [2, 3]; // 2/3
-
-            // MMC dos denominadores
-            const denominadorComum = mmc(mmc(fracao1[1], fracao2[1]), fracao3[1]);
-
-            // Convertendo as frações para o denominador comum
-            const numerador1 = fracao1[0] * (denominadorComum / fracao1[1]);
-            const numerador2 = fracao2[0] * (denominadorComum / fracao2[1]);
-            const numerador3 = fracao3[0] * (denominadorComum / fracao3[1]);
-
-            // Somando e subtraindo os numeradores
-            const resultadoNumerador = numerador1 + numerador2 - numerador3;
-
-            const resultado = resultadoNumerador + "/" + denominadorComum;
-            document.getElementById("resposta4").textContent = "A resposta é: " + resultado;
+            while (b < numero) {
+                c = a + b;
+                a = b;
+                b = c;
+            }
+            if (b === numero) {
+                document.getElementById("resposta1").textContent = "O número " + numero + " pertence à sequência de Fibonacci.";
+            } else {
+                document.getElementById("resposta1").textContent = "O número " + numero + " NÃO pertence à sequência de Fibonacci.";
+            }
         }
 
-        // Função para resolver o exercício 5 - História: Brasil Colônia
-        function resolverExercicio5() {
-            const resposta = "O principal motivo foi a fuga das tropas napoleônicas que invadiram Portugal.";
-            document.getElementById("resposta5").textContent = resposta;
+        // Função para verificar letra 'A'
+        function verificarLetraA() {
+            const str = document.getElementById("stringEntrada").value;
+            const count = (str.match(/a/gi) || []).length;
+            document.getElementById("resposta2").textContent = `A letra 'A' aparece ${count} vezes.`;
         }
 
-        // Função para resolver o exercício 6 - História: Povos Indígenas
-        function resolverExercicio6() {
-            const resposta = "Os povos indígenas viviam em sociedades organizadas com culturas diversas, praticavam caça, pesca, agricultura e tinham sistemas de crenças e rituais próprios.";
-            document.getElementById("resposta6").textContent = resposta;
+        // Função para calcular o somatório de K
+        function calcularSomatorio() {
+            let INDICE = 12, SOMA = 0, K = 1;
+            while (K < INDICE) {
+                K = K + 1;
+                SOMA = SOMA + K;
+            }
+            document.getElementById("resposta3").textContent = "O valor da variável SOMA é: " + SOMA;
+        }
+
+        // Função para completar as sequências
+        function completarSequencias() {
+            const seqA = 9;   // Lógica: números ímpares
+            const seqB = 128; // Lógica: múltiplos de 2
+            const seqC = 49;  // Lógica: quadrados perfeitos
+            const seqD = 100; // Lógica: quadrados perfeitos
+            const seqE = 13;  // Lógica: sequência de Fibonacci
+            const seqF = 20;  // Lógica: números começando com 2, depois múltiplos de 2
+
+            const resposta = `
+                a) Próximo número: ${seqA}<br>
+                b) Próximo número: ${seqB}<br>
+                c) Próximo número: ${seqC}<br>
+                d) Próximo número: ${seqD}<br>
+                e) Próximo número: ${seqE}<br>
+                f) Próximo número: ${seqF}
+            `;
+            document.getElementById("resposta4").innerHTML = resposta;
+        }
+
+        // Função para resolver o problema dos interruptores
+        function solucaoInterruptores() {
+            const solucao = `
+                1. Ligue o primeiro interruptor e espere alguns minutos.<br>
+                2. Desligue o primeiro interruptor e ligue o segundo.<br>
+                3. Vá até a sala das lâmpadas.<br>
+                4. A lâmpada que estiver acesa está conectada ao segundo interruptor.<br>
+                5. A lâmpada que estiver apagada e quente está conectada ao primeiro interruptor.<br>
+                6. A lâmpada que estiver apagada e fria está conectada ao terceiro interruptor.
+            `;
+            document.getElementById("resposta5").innerHTML = solucao;
         }
     </script>
 </body>
